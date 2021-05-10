@@ -23,7 +23,8 @@ registerRouter(app)
 mongoose.connect(process.env.CONNECTION_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useFindAndModify: true
+    useFindAndModify: false,
+    useCreateIndex: true
 })
     .then(() => app.listen(port, () => console.log(`Server running on port: ${port}`)))
     .catch((error) => console.log(error.message))
